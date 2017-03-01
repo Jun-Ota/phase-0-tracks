@@ -1,0 +1,21 @@
+img.hat{
+	position: absolute;
+    left: 49%; 
+    margin-top: 0px;
+    z-index: 2;
+}
+
+img.glasses{
+	position:  absolute;
+    left: 53%; 
+    margin-top: 180px;
+    z-index: 2;
+}
+
+img.octopus{
+	position:  absolute;
+    left: 50%; 
+    margin-top: 80px;
+    z-index: 1;
+}
+
