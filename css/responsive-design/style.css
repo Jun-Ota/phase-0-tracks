@@ -13,8 +13,7 @@ cite {
   list-style-type: none;
   padding-left: 0px;
   width: 200px;
-  display: inline;
-  vertical-align: sub;
+  
 }
 
 /* you're welcome to edit the
@@ -38,4 +37,13 @@ body {
   width: 960px;
 }
 
+main{
+ width: 756px;
+}
+
+#external-links  {
+  float: right;
+  display: inline;
+  vertical-align: sub;
+}
 
