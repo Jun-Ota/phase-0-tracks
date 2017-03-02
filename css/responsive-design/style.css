@@ -12,7 +12,7 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
-  width: 200px;
+  
   
 }
 
@@ -34,16 +34,18 @@ figcaption {
 }
 
 body {
-  width: 960px;
+  max-width: 960px;
+
 }
 
 main{
- width: 756px;
+ min-width: 80%;
 }
 
 #external-links  {
   float: right;
   display: inline;
   vertical-align: sub;
+  width: 20%;
 }
 
