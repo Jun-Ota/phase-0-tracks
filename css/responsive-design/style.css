@@ -39,7 +39,7 @@ body {
 }
 
 main{
- min-width: 80%;
+ width: 80%;
 }
 
 #external-links  {
@@ -47,5 +47,24 @@ main{
   display: inline;
   vertical-align: sub;
   width: 20%;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: pink;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    font-size: .8em;
+   
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    width: 100%
+  }
 }
 
