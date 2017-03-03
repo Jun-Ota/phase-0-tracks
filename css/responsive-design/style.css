@@ -35,6 +35,7 @@ figcaption {
 
 body {
   max-width: 960px;
+  alignment-baseline: middle;
 
 }
 
