@@ -3,3 +3,34 @@ body {
 background: skyblue; 
 
 }
+header {
+	background: pink;
+	/* height: 150px; */
+	margin: 5%;
+	padding:8%;
+}
+
+.column-1 {
+	background:blue;
+	/* float: left; */
+  display: inline-block;
+	width: 34%;
+	margin: 5%;
+	padding: 2%;
+	vertical-align: top;
+}
+
+.column-2 {
+	background:skyblue;	
+	/* float: right; */
+	display: inline-block;
+	width: 34%;
+	margin: 5%;
+	padding: 2%;
+	vertical-align: top;
+}
+
+footer {
+	background:yellow;
+	/* clear: both; */
+}
