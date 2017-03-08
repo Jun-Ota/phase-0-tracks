@@ -1,0 +1,42 @@
+<Elevator Algorithm>
+
+-Go to the floor where someone pushed the button.
+-When you reach the floor, open the door.
+-Close the door if one of the below occured.
+  -Someone pushed the closing button.
+  -No action for 4 seconds.
+  -Someone pushed a certain floor.
+  -Close the door slowly when someone used the button on the side wall.
+-If the floor button was pressed.
+ -Go to the floor.
+ -open the door.
+ -Close the door if one of the below occured.
+  -Someone pushed the closing button.
+  -No action for 4 seconds.
+  -Someone pushed a certain floor.
+  -Close the door slowly when someone used the button on the side wall.
+-If no action or someone pushed the closing button.
+ -stay at the current floor.
+
+<Travel to Work Algorithm>
+
+-If it is before 9:00, walk to the bus stop.
+-Take the bus to "Shinbashi"
+-Get of at "Shinbashi" station.
+-Walk to the office.
+
+-If it is after 9:00 and before 9:10, go to the Hibiya station.
+-Take the Hibiya line to Ginza station.
+-Get of at Ginza station.
+-Walk to Ginza line.
+-Get on the train heading to Shibuya.
+-Get of at Shinbashi station.
+-Walk to the office.
+
+-If it is after 9:11, go to the Hibiya station.
+-Take the Hibiya line to Roppongi station.
+-Get of at Roppongi station.
+-Walk to Ooedo line.
+-Get on the train heading to Monzennakacho.
+-Get of at Shiodome station.
+-Walk to the office.
