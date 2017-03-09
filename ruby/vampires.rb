@@ -11,49 +11,64 @@ def detection
 	
 	puts "How old are you? What year were you born? "
 	 age = gets.chomp
-   if age < "100 "
+   if age.to_i < 100
      age_check = true 
    else 
      age_check = false
    end  
 
-	puts "Our company cafeteria serves garlic bread.
-	       Should we order some for you? y/n"
+	puts "Our company cafeteria serves garlic bread.Should we order some for you? yes/no"
 	 garlic = gets.chomp
-   if garlic == "y" 
+   if garlic == "yes" 
      garlic_check = true
-    else 
+   else
      garlic_check = false
-    end
+   end
 
-	puts "Would you like to enroll in the company’s health insurance?y/n"
+	puts "Would you like to enroll in the company’s health insurance? yes/no/waive"
 	 health_insurance = gets.chomp
-	  if health_insurance == "y"
+	  if health_insurance == "yes"
 	     health_insurance_check = true
+	  elsif health_insurance == "waive"
+       health_insurance_check = true
 	  else 
-	   health_insurance_check =false
+	   health_insurance_check = false
 	  end
-	
-	 age_check && garlic_check 
-    puts"Probably not a vampire."
-
-   age_check && garlic_check || health_insurance_check 
-	  puts "Probably a vampire."
-
-   age_check && garlic_check && health_insurance_check 
-    puts "Almost certainly a vampire."
-
-   name_check = false  
- 	  puts "Definitely a vampire"
- 	  
-   print "Results inconclusive."
-
-   puts "Result"
-    name
-    age
-    garlic
-    health_insurance
-      
+	  
+	 puts "What is you allergies? Type done when finished."
+	   allergies = gets.chomp
+	   
+	 until allergies == "done"
+	  if allergies == "sunshine"
+	    puts "Probably a vampire."
+	    break
+	  else 
+	   puts "What is you allergies?Type done when finished."
+	    allergies = gets.chomp
+	  end
+	 end
+	 
+	if age_check  && garlic_check && health_insurance_check && name_check
+	  puts "Probably not a vampire."
+	elsif !age_check  &&  (garlic_check || health_insurance_check)
+	 puts "Probably a Vampire."
+	elsif !age_check && !garlic_check && !health_insurance_check 
+	  puts "Almost certainly a vampire."
+	elsif age_check && garlic_check && health_insurance_check && !name_check
+	  puts "Definately a vampire."
+  else 
+    puts "Results inconclusive."
+  end
+  
 end
 
-detection
+ puts "How many employees processed?"
+ number_remaining  = gets.chomp.to_i
+ until number_remaining == 0 
+   puts "Next please."
+   detection
+   number_remaining = number_remaining - 1 
+ end
+  
+puts "Finished!"
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends." 
