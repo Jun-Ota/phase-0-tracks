@@ -3,34 +3,67 @@ barber = {
 		brands:{
 			andis:{
 			 color: "black",
-			 model: =>"andis masters"},
+			 price: 100,
+			 model: "andis masters"},
+			
 	        wahls:{
 	         color: "black",
+	         price: 60,
 			 model: "wahls pro clippers"},
-	        aostrs: {
+
+	        osters: {
  			 color: "black",
-			 model: => "osters 76 classic"},
+ 			 price: 85,
+			 model: "osters 76 classic"},
 		},
+	},
 	trimmers:{ 
 		brands:{
 		    andis:{
 			 color: "blue",
+             price: 70,
 			 model: "andis t-outliners"},
+			 
 	        wahls:{
 	         color: "red",
+	         price: 40,
 			 model: "wahls detailers"},
-	        aostrs: {
+
+	        osters: {
  			 color: "white",
+ 			 price: 50,
 			 model: "osters t-finisher"},
 		}, 
+	},
 	blades:{
 		razor_1:"Guillet",
 		razor_2:"Straight razor",
 	},
 	guards:["0","1","2","3","4","5","6"],
-}
+	}
 
-p barber[:trimmers][:brands][:aostrs][:model] 
+ numbers = [1,2,3,4,5,6,7]
+ # p numbers.delete_if { |x| x < 5 }
+ # p numbers.keep_if  { |x| x < 5 }
+ # p numbers.drop_while  { |x| x < 3 }
+ # p numbers.take_while  { |x| x > 5 }
+ 
+  p numbers.delete_if {|x| x == 3 break }
 
 
-barber_tools = [ ]
+ # p barber
+ # p "-"*70
+# p barber[:trimmers][:brands][:aostrs][:model] 
+# p barber[:guards].push("8")
+# barber.each {|x| puts "Here are the lists of barber tools.#{x}"}
+ 
+  # barber[:guards].map {|x| puts "abc #{x} " }
+# p barber.map {|x| x + ["Hi!"] }
+# p "-"*70
+#   p barber
+# barber_tools = [ ]
+
+
+
+
+
