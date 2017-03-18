@@ -1,3 +1,4 @@
+
 arr = [42, 89, 23, 1]
 
 def search_array(a,i)
