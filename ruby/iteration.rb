@@ -48,8 +48,31 @@ barber = {
  # p numbers.drop_while  { |x| x < 3 }
  # p numbers.take_while  { |x| x > 5 }
  
-  p numbers.delete_if {|x| x == 3 break }
 
+ numbers.reject{|x|  
+    break if x == 4
+    puts x  }
+
+  
+  
+  # numbers.reject{|e| 
+  # break if e % 3 == 0 
+  # puts e} 
+  
+  
+#   a = [1, 3, 4, 7, 9, 13]
+# a.reject{|e| e % 3 == 0} #=> [1, 4, 7, 13]
+  
+  
+  p numbers.delete_if {|x| break if x == 3}
+  # p numbers
+ 
+  # p numbers.delete_if {|x| x != 3 } 
+  # p numbers
+
+# fruits = ["apple", "orange", "banana", "kiwi", "pch"]
+# fruits.reject! {|item| item =~ /[aiueo]/ }
+# p fruits
 
  # p barber
  # p "-"*70
