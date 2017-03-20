@@ -1,55 +1,39 @@
-
 barber = {
-        brands:“andis”,
-        color:“red”,
-        price:40,
-        model:“wahls detailers”,
-}
-            
-numbers = [1,2,3,4,5,6,7]
-
-# Release 1-1,1-2
-p numbers.each {|x| puts x + 1 }
-p numbers.map! {|x| p x + 1 }
- 
-barber.each {|x,y| puts "#{x} is #{y}"}
-barber.map! {|x,y| "#{x}.next"}
-
-p "-"*90
-barber = { 
-    clippers:{ 
+    clippers:{
         brands:{
-            andis:{
+            Andis:{
              color: ["black","blue","red","white","yellow","silver"],
-             price: 100,
+             price: "100",
              model: "andis masters"},
             
-            wahls:{
+            Wahls:{
              color: "black",
-             price: 60,
+             price: 70.00,
              model: "wahls pro clippers"},
-            osters: {
+
+            Osters: {
              color: "black",
-             price: 85,
+             price: 85.00,
              model: "osters 76 classic"},
         },
     },
-    trimmers:{ 
+    trimmers:{
         brands:{
-            andis:{
+            Andis:{
              color: "blue",
-             price: 70,
+            price: 70.00,
              model: "andis t-outliners"},
-             
-            wahls:{
+            
+            Wahls:{
              color: "red",
-             price: 40,
+             price: 40.00,
              model: "wahls detailers"},
-            osters: {
+
+            Osters: {
              color: "white",
-             price: 50,
+             price: 50.00,
              model: "osters t-finisher"},
-        }, 
+        },
     },
     blades:{
         razor_1:"Guillet",
@@ -57,49 +41,143 @@ barber = {
     },
     guards:["0","1","2","3","4","5","6"],
     }
+
+#RELEASE 1 ----------------------------------------------
+#HASH--.each
+
+#BEFORE
+    # p barber[:trimmers][:brands]
+    # p "-"*90
+
+#AFTER
+    # barber[:trimmers][:brands].each {|brand,details| puts "Here are a few about our product in stock. #{brand} : #{details}" }
+    # p barber[:trimmers][:brands]
+
+#--------------------------------------------------------
+#HASH-- .map
+
+#BEFORE
+    # p barber[:blades]
+    # p "-"*90
+
+#AFTER
+    # blades_var = []
+    #  barber[:blades].map do |razor,type|
+    #   blades_var << {razor.upcase => type}
+
+    #  end
+    #  p blades_var
+
+
     
-# RELEASE 2 QUESTIONS
-# => HASHES METHODS----------------------
-  p barber
-  p "-"*90
-# 1
-	barber[:trimmers].delete_if {|x,y| x == "b"}
-	p barber
-	p "-"*90
+#RELEASE 2 QUESTIONS-------------------------------------
+# => HASH METHODS
+
+#1
+#Delete if value == given value.
+#BEFORE
+    # p barber[:clippers][:brands][:Wahls]
+    # p "-"*90
+#AFTER
+     # barber[:clippers][:brands][:Wahls].delete_if {|key, value| value == 70.00}
+     # p barber[:clippers][:brands][:Wahls]
+
+
 # 2
- 	barber[:guards].push("8")
-	p barber
-	p "-"*70
-# 3
-	barber[:blades].keep_if {|x,y| y == "Guillet"}
- 　　p barber
- 　　p "-"*70
- 
-# 4
-  　barber[:blades].delete_if {|x,y| 
-  　break if y.length == 7 }
+#Keep only keys that meet the given value.
+    # p barber.keys
+    # p "-"*90
 
-numbers = [1,2,3,4,5,6,7]
- 
-# => ARRAY METHODS----------------------
-  p numbers
-# 1 - 
-  numbers.delete_if {|x| x < 5}
-  p numbers
-# 2 - 
-  numbers.keep_if  { |x| x == 3}
-  p numbers
-# 3
-  numbers.drop_while  { |x| x < 3 }
+    # barber.keep_if {|key, value| key == :clippers }
+    # p "-"*90
+    # p barber.keys
 
-# 4
-  numbers.delete_if do |x|
-        if x > 6 
-            break
-          else 
-            true
-        end
-    end
-  p numbers
+
+#3
+# BEFORE
+    # p barber[:guards]
+    # p "-"*90
+# AFTER
+    # barber[:guards].delete("3") {|value| puts "#{value} is not found"}
+    # p barber[:guards]
+
+#4
+# BEFORE
+    # p barber[:guards]
+    # p "-"*90
+# AFTER
+#Delete all numbers that meet condition until boolean equals false.
+
+#     barber.delete_if do |tools,value|
+#         meets_condition = false
+#         break if value > "4"
+#         puts <
+#         meets_condition = true
+#     end
+
+# p barber[:guards]
+
+
+
+
+# RELEASE 1 -----------------.map and .each
+
+ice_cream = ["Vanilla","Chocolate","Orange Sherbert","Dulce de Leche","Strawberry"]
+
+
+
+#.each
+
+    # ice_cream.each {|flavor| p "Would you like #{flavor} ice cream?"}
+
+#.map
+
+    # p ice_cream
+    # ice_cream.map! {|flavor| flavor +"!"}
+    # p ice_cream
+
+
+# RELEASE 2 ----------------------ARRAY METHODS
+
+
+
+#1 -
+
+ #    p ice_cream
+
+     # ice_cream.delete_if {|flavor| flavor != "Vanilla"}
+     # p ice_cream
+
+# #2 -
+
+#      p ice_cream
+
+    #  ice_cream.keep_if  { |flavor| flavor.length > 9}
+    #  p ice_cream
+
+# #3
+
+#     p ice_cream
+
+
+    # new_icecream = ice_cream.drop_while  do |flavor|
+    #        flavor.index("Vanilla") == 0
+    #  end
+    # p new_icecream
+
+    
+# # 4
+
+#     p ice_cream
+
+    #  ice_cream.delete_if do |flavor|
+
+    #      bool= false
+
+    #      break if flavor == "Dulce de Leche"
+    #       bool =true
+    
+    #    end
+    #  p ice_cream
  
 
