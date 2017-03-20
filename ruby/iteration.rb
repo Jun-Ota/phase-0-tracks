@@ -62,14 +62,12 @@ barber = {
 
 #AFTER
     # blades_var = []
-    #  barber[:blades].map do |razor,type|
+    #   barber[:blades].map do |razor,type|
     #   blades_var << {razor.upcase => type}
 
-    #  end
-    #  p blades_var
+    #   end
+    #   p blades_var
 
-
-    
 #RELEASE 2 QUESTIONS-------------------------------------
 # => HASH METHODS
 
@@ -79,8 +77,8 @@ barber = {
     # p barber[:clippers][:brands][:Wahls]
     # p "-"*90
 #AFTER
-     # barber[:clippers][:brands][:Wahls].delete_if {|key, value| value == 70.00}
-     # p barber[:clippers][:brands][:Wahls]
+      # barber[:clippers][:brands][:Wahls].delete_if {|key, value| value == 70.00}
+      # p barber[:clippers][:brands][:Wahls]
 
 
 # 2
@@ -103,20 +101,18 @@ barber = {
 
 #4
 # BEFORE
-    # p barber[:guards]
+    # p barber.keys
     # p "-"*90
 # AFTER
-#Delete all numbers that meet condition until boolean equals false.
+# Delete all numbers that meet condition until boolean equals false.
 
-#     barber.delete_if do |tools,value|
+#     barber.delete_if do |key, value|
 #         meets_condition = false
-#         break if value > "4"
-#         puts <
+#         break if key == :blades
 #         meets_condition = true
 #     end
 
-# p barber[:guards]
-
+# p barber.keys
 
 
 
@@ -128,7 +124,8 @@ ice_cream = ["Vanilla","Chocolate","Orange Sherbert","Dulce de Leche","Strawberr
 
 #.each
 
-    # ice_cream.each {|flavor| p "Would you like #{flavor} ice cream?"}
+    
+  # ice_cream.each {|flavor| p "Would you like #{flavor} ice cream?"}
 
 #.map
 
@@ -139,45 +136,39 @@ ice_cream = ["Vanilla","Chocolate","Orange Sherbert","Dulce de Leche","Strawberr
 
 # RELEASE 2 ----------------------ARRAY METHODS
 
-
-
 #1 -
+    # p ice_cream
 
- #    p ice_cream
-
-     # ice_cream.delete_if {|flavor| flavor != "Vanilla"}
-     # p ice_cream
+    #   ice_cream.delete_if {|flavor| flavor != "Vanilla"}
+    #   p ice_cream
 
 # #2 -
 
 #      p ice_cream
 
-    #  ice_cream.keep_if  { |flavor| flavor.length > 9}
-    #  p ice_cream
+      # ice_cream.keep_if  { |flavor| flavor.length > 9}
+      # p ice_cream
 
 # #3
 
-#     p ice_cream
-
-
+    # p ice_cream
     # new_icecream = ice_cream.drop_while  do |flavor|
-    #        flavor.index("Vanilla") == 0
-    #  end
+    #         flavor.index("Vanilla") == 0
+    #   end
     # p new_icecream
 
     
 # # 4
 
-#     p ice_cream
+    # p ice_cream
 
-    #  ice_cream.delete_if do |flavor|
-
-    #      bool= false
-
-    #      break if flavor == "Dulce de Leche"
+    #   ice_cream.delete_if do |flavor|
+    #       bool= false
+    #       break if flavor == "Dulce de Leche"
     #       bool =true
-    
-    #    end
-    #  p ice_cream
- 
-
+    #     end
+    #   p ice_cream
+      
+      
+      
+      
