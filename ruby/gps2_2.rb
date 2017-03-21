@@ -1,18 +1,23 @@
 # create a hash called "grocery_list"
-
-# Method to create a list
+   # Method to create a list
+   def create_list(item)
+   	grocery_list = {}
 # input: string of items separated by spaces 
-# (example: "carrots apples cereal pizza")
-# steps: 
-#   [fill in any steps here]
-#   create a method
-#   define a method called "grocery_create_list"
+# (example: "carrots apples cereal pizza")     
 #   add list items into grocery hash
+    grocery_list[item] = 0 
 #   set default quantity(quantity = 0)
 #   add to list items by iterating through each item.
 #   print the list to the console
 #   [method 5:can you use one of your other methods here?]
 #   output:[hash] {[item1:=>0],[item2:=>0]}
+    return grocery_list
+   end
+
+
+puts "enter items"
+ answers = gets.chomp 
+p create_list(answers)
 
 # Method to add an item to a list
 #  Create the method add_item.
