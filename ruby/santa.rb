@@ -1,22 +1,20 @@
 class Santa
-  attr_reader :gender, :ethnicity
-  attr_accessor :country, :height
+  # attr_reader :gender, :ethnicity
+  attr_accessor :gender, :ethnicity, :age,
   def speak
    puts "Ho, ho, ho! Haaaappy holidays!" 
   end
-
   def eat_milk_and_cookies(cookie_type)
    puts "That was a good #{cookie_type}!" 
   end
-
-  def initialize(gender,ethnicity,country,height)
+  def initialize
     # puts "Initializing Santa instance ..."
-	   @gender = gender 
-	   @ethnicity = ethnicity
+	   @gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"] 
+	   @ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 	   @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	   @country = country
-	   @height = height
-	   @age = 0 
+	   # @country = country
+	   # @height = height
+	   @age = [*(0..140)] 
    end
    def celebrate_birthday 
      age = @age + 1 
@@ -24,40 +22,27 @@ class Santa
    def get_mad_at(reindeer_name)
      @reindeer_ranking  << reindeer_name 
      p @reindeer_ranking
-   end 
-     # getter method(readable)
-   # def age 
-   # 	@age
-   # end
-
-   # def ethnicity 
-   # 	@ethnicity
-   # end
-
-   # def gender
-   #  @gender 
-   # end 
-
-   # def country
-   # 	@country
-   # end
-
-   # def height 
-   # 	@height
-   # end
-
-   #setter (readable,editable)
-    # def gender=(new_gender)
-    #  @gender = new_gender 
-    # end
-
+   end   
 end
 
+# Driver code 5
+  # 10.times do |santa|
+ def make_santa
+  santa = Santa.new
+  santa.gender.sample
+  santa.ethnicity.sample 
+  santa.age.sample
+ puts "The Santa is #{santa.gender.sample} and #{santa.ethnicity.sample} and  #{santa.age.sample} years old."
+  end
+
+  10.times do |santa|
+   make_santa
+  end
 # Driver code 4
-santa = Santa.new("agender", "black","japan","180")
+# santa = Santa.new("agender", "black","japan","180")
 # santa.get_mad_at("Jacob")
 # santa.gender = "something new"
-puts "The santa is a #{santa.gender}"
+# puts "The santa is a #{santa.gender}"
 
 # Driver code 3
 # santas = []
