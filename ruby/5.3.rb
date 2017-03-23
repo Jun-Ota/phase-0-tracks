@@ -12,12 +12,64 @@
 #   Pw:"120y",
 #   Sw:"90y"
 # }
+# Why is the hash above error???
+
+
+golf_course = ["ABC","Phoenix","Gotenba","Yomiuri","Naruo","Nishinomiya-kogen"]
+
  golf_club = {
    "1w" => "280y",
    "3w" => "230y",
    "5w" => "200y",
 }
-golf_course = ["ABC","Phoenix","Gotenba","Yomiuri","Naruo","Nishinomiya-kogen"]
+
+
+
+# Driver 4
+# A method that will remove items from a data structure until the condition
+# in the block evaluates to false, then stops 
+# (you may not find a perfectly working option for the hash, and that's okay).
+   golf_course.delete_if { |course|
+           bool= false
+           break if course == "Yomiuri"
+           
+    }
+    p golf_course
+
+
+# Driver 3 
+# A different method that filters a data structure for only 
+# items satisfying a certain condition -- Ruby offers several options!
+
+# Driver 2
+# A method that filters a data structure for only items that do 
+# satisfy a certain condition 
+# (for example, keeping any numbers that are less than 5).
+# golf_course.each {|course|
+#  golf_course.keep_if {|course| course == "ABC"}
+#  p golf_course
+# }
+# How do you set two condition in? ABC and Gotenba.
+
+# golf_club.each {|club, yard|
+#  golf_club.keep_if {|club,yard| yard == "230y" }
+#  p golf_club
+# }
+
+
+
+# Driver 1
+# golf_course.each {|course|
+#   golf_course.delete_if  {|course| course == "ABC"}
+#  p golf_course
+# }
+
+# Question Why does this print 5 times????
+
+# golf_club.each {|club, yard| 
+#  golf_club.delete_if {|club, yard| club != "1w" }
+#  p golf_club
+# }
 
 # p golf_course
 # p golf_club
@@ -34,9 +86,10 @@ golf_course = ["ABC","Phoenix","Gotenba","Yomiuri","Naruo","Nishinomiya-kogen"]
 #  puts "You need to use #{club} when #{yard} is left."
 # end
 
-golf_club.map! do |club,yard|
- puts "{club}.next "
-end
+# you cannnot use .map! in hash
+# golf_club.map do |club,yard|
+#  puts "#{club}"
+# end
 
 
 
