@@ -7,14 +7,14 @@ class Santa
   def eat_milk_and_cookies(cookie_type)
    puts "That was a good #{cookie_type}!" 
   end
-  def initialize
+  def initialize(gender,ethnicity)
     # puts "Initializing Santa instance ..."
-	   @gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"] 
-	   @ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+	   @gender = gender  
+	   @ethnicity = ethnicity
 	   @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	   # @country = country
 	   # @height = height
-	   @age = [*(0..140)] 
+	   @age = rand(140) 
    end
    def celebrate_birthday 
      age = @age + 1 
@@ -28,11 +28,10 @@ end
 # Driver code 5
   # 10.times do |santa|
  def make_santa
-  santa = Santa.new
-  santa.gender.sample
-  santa.ethnicity.sample 
-  santa.age.sample
- puts "The Santa is #{santa.gender.sample} and #{santa.ethnicity.sample} and  #{santa.age.sample} years old."
+  gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"] 
+  ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+  santa = Santa.new(gender.sample,ethnicity.sample)
+ puts "The Santa is #{santa.gender} and #{santa.ethnicity} and  #{santa.age} years old."
   end
 
   10.times do |santa|
