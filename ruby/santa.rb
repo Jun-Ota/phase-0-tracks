@@ -26,9 +26,8 @@ class Santa
 end
 
 # Driver code 5
-  # 10.times do |santa|
+  Question 1:The reason that I can add array to gender is because setting a variable because of the setter methode declared???
  def make_santa
-  # Is setting a variable because of the setter methode declared???
   gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"] 
   ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
   santa = Santa.new(gender.sample,ethnicity.sample)

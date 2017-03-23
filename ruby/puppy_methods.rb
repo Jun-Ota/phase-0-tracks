@@ -81,10 +81,9 @@ end
   # three_put = []
 end
 
-
-# Questions 
- # How to add result to a hash and then conbine it to a array?
- # What to do for the last instruction below.
+Question1:How to put the result array?
+Question2:How can I refactor the code above?
+Question3:What to do for the last instruction below.
 # Iterate over that data structure using .each and 
 # call the instance methods you wrote on each instance.
  # So if you wrote a Gymnast class, this is where you'd call .flip 
