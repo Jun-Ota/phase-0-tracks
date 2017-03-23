@@ -54,5 +54,5 @@ airplane = {
  # p airplane[:first_class][:meals]
 # Add a line of code that does that here.
 # 6.How would you lowercase the pretty name of one of the classes?
- p  airplane[:business_class][:pretty_name].downcase
-# Add a line of code that does that here.
+ # p  airplane[:business_class][:pretty_name].downcase
+# ====================================== 
