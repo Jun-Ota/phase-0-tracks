@@ -38,38 +38,57 @@
 
 class  Golf 
   def initialize 
-   puts " Playing golf is wonderful!!"
+    " Playing golf is wonderful!!"
   end 
 
   def club_selecter
     yards_left = rand(200)
-    puts yards_left
    if 150 < yards_left
-   	 puts "6 IRON "
+   	"6 IRON"
    elsif 100 < yards_left && yards_left < 150
-     puts "8 IRON"
+    "8 IRON"
    else
-     puts "Pitching Wedge"
+    "Pitching Wedge"
    end
   end
 
   def putt_counter
     number = rand(5)
-  	puts "I cannnot believe you had #{number} times of 3 putt!"
+  	"#{number} times of three puts"
   end
 
 end
 
 def golfer
+  result = {}
   golf = Golf.new
-  golf.club_selecter
-  golf.putt_counter
+    club = golf.club_selecter
+    three = golf.putt_counter
+  result.store(club,three)
+  final = []
+  final << result
+  p final
+  # image result = {7 iron: 2 times of three puts}
+  # result << golf.club_selecter
+  # result << golf.putt_counter
 end
 
 3.times do |golf|
-  golfer
+   golfer 
+  # yardage = []
+  # yardage << yards_left
+  # club_choice = []
+  # three_put = []
 end
 
+
+# Questions 
+ # How to add result to a hash and then conbine it to a array?
+ # What to do for the last instruction below.
+# Iterate over that data structure using .each and 
+# call the instance methods you wrote on each instance.
+ # So if you wrote a Gymnast class, this is where you'd call .flip 
+ # and .jump on each of your instances of Gymnast.
 
 
 
