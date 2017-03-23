@@ -28,11 +28,12 @@ end
 # Driver code 5
   # 10.times do |santa|
  def make_santa
+  # Is setting a variable because of the setter methode declared???
   gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"] 
   ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
   santa = Santa.new(gender.sample,ethnicity.sample)
  puts "The Santa is #{santa.gender} and #{santa.ethnicity} and  #{santa.age} years old."
-  end
+ end
 
   10.times do |santa|
    make_santa
