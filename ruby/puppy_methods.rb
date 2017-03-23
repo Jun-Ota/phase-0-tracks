@@ -41,25 +41,36 @@ class  Golf
    puts " Playing golf is wonderful!!"
   end 
 
-  def club_selecter(yards_left)
-   if yards_left > 150
-   	 puts "3w"
-   elsif 100 < yards_left < 150
-     puts "7I"
+  def club_selecter
+    yards_left = rand(200)
+    puts yards_left
+   if 150 < yards_left
+   	 puts "6 IRON "
+   elsif 100 < yards_left && yards_left < 150
+     puts "8 IRON"
    else
-     puts "P"
+     puts "Pitching Wedge"
    end
   end
 
-  def putt_counter(number)
+  def putt_counter
+    number = rand(5)
   	puts "I cannnot believe you had #{number} times of 3 putt!"
   end
 
 end
 
-golf = Golf.new
-golf.club_selecter(180)
-golf.putt_counter(4)
+def golfer
+  golf = Golf.new
+  golf.club_selecter
+  golf.putt_counter
+end
+
+3.times do |golf|
+  golfer
+end
+
+
 
 
 
