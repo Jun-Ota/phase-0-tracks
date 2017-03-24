@@ -6,6 +6,9 @@
 def encrypt(str)
   index = 0 
   secret_password = " "
+
+  Question 1: what is the reason to write line 8???  container??
+
   while index < str.length
    secret_password[index] = str[index].next
    index += 1
@@ -18,6 +21,17 @@ end
 # to change the letter, we would use the built in numbers for each alphabet.
   # ex: "a" = 97 "s" = 115
 
+# DIRECTIONS
+# A decrypt method that reverses the process above. 
+# Note that Ruby doesn't have a built-in method for going backward one letter.
+# How can you find out where a letter is in the alphabet, then access 
+# the letter right before it? 
+# Hint: In the IRB session above, you learned how to ask a string for the index of a letter. 
+# "abcdefghijklmnopqrstuvwxyz" counts as a string.
+
+  Question 2 : i have made a method below but i do not think this is a proper way...
+
+    
 def decrypt(str)   
   words = str.split(" ")           
   word_idx = 0          
