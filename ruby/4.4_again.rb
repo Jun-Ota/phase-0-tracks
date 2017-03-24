@@ -31,6 +31,8 @@ puts "Our company cafeteria serves garlic bread.
      garlic = false
   end   
 
+
+
 puts "Would you like to enroll in the company’s health insurance?(y/n"
    insurance = gets.chomp 
    if insurance == "y"
