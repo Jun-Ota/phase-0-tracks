@@ -1,6 +1,6 @@
 class Santa
   # attr_reader :gender, :ethnicity
-  attr_accessor :gender, :ethnicity, :age,
+  # attr_accessor :gender, :ethnicity, :age,
   def speak
    puts "Ho, ho, ho! Haaaappy holidays!" 
   end
@@ -24,10 +24,10 @@ class Santa
      p @reindeer_ranking
    end   
 end
-
 # Driver code 5
-  Question 1:The reason that I can add array to gender is because setting a variable because of the setter methode declared???
- def make_santa
+ #  Question 1:The reason that I can add array to gender is because setting a variable because of the setter methode declared???
+ #  It is affecting the line 34 which when I calll the method from outside the class.
+  def make_santa
   gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"] 
   ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
   santa = Santa.new(gender.sample,ethnicity.sample)

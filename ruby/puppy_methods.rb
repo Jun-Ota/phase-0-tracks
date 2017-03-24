@@ -65,25 +65,25 @@ def golfer
     club = golf.club_selecter
     three = golf.putt_counter
   result.store(club,three)
-  final = []
-  final << result
-  p final
+   result 
   # image result = {7 iron: 2 times of three puts}
-  # result << golf.club_selecter
-  # result << golf.putt_counter
 end
 
-3.times do |golf|
-   golfer 
-  # yardage = []
-  # yardage << yards_left
-  # club_choice = []
-  # three_put = []
+ final = []
+3.times do
+   final << golfer    
 end
 
-Question1:How to put the result array?
-Question2:How can I refactor the code above?
-Question3:What to do for the last instruction below.
+p final
+
+ # Question1:How to put the result array?
+   # difference between "return" "p" "puts"
+   # In this case the return was OK.
+
+  Question2:How can I refactor the code above?
+
+  Question3:What to do for the last instruction below.
+
 # Iterate over that data structure using .each and 
 # call the instance methods you wrote on each instance.
  # So if you wrote a Gymnast class, this is where you'd call .flip 

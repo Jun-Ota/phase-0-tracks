@@ -1,19 +1,19 @@
 # golf_club = {
-#   1w:"280y",
-#   3w:"230y",
-#   5w:"200y",
-#   3i:"200y",
-#   4i:"190y",
-#   5i:"180y",
-#   6i:"170y",
-#   7i:"160y",
-#   8i:"150y",
-#   9i:"135y",
+#   Driver:"280y",
+#   Cleek:"230y",
+#   Wood:"200y",
+#   Three_Iron:"200y",
+#   Four_Iron:"190y",
+#   Five_Iron:"180y",
+#   Six_Iron:"170y",
+#   Seven_Iron:"160y",
+#   Eight_Iron:"150y",
+#   Nine_Iron:"135y",
 #   Pw:"120y",
 #   Sw:"90y"
 # }
- Question1:Why is the hash above error???
-
+ # Question1:Why is the hash above error???
+# you cant start keys from integer.
 
 golf_course = ["ABC","Phoenix","Gotenba","Yomiuri","Naruo","Nishinomiya-kogen"]
 
