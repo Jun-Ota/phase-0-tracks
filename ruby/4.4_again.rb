@@ -3,22 +3,27 @@ def detection
 	  name = gets.chomp
 	   if name == "Drake Cula" || name == "Tu Fang"
 	    puts "Definitely a vampire."
+	    return 
 	   else 
 	   end 
-
-Question 1: How can i finish if the name == "Drake Cula"???
-Question 2: How can i refactor this program? I think the block is too big.
+# Question 1: How can i finish if the name == "Drake Cula"???
+ # 　=> use "return"
+# Question 2: How can i refactor this program? I think the block is too big.
+ #  => divide it into 5 methods.
 
 	puts "How old are you? What year were you born?"
 	  age = gets.chomp.to_i
+	  # year_born = gets.chomp.to_i
 	  if age > 100 
 	  	age = false
 	  else 
 	  	age = true 
 	  end
-
- Question 3: How can i add Time.now.year.?
- 
+# Question 3: How can i add Time.now.year.?
+#  => ask the year they were born and calculate the age.
+#  => then using Time.now.year to determine the year.
+#  => set the condition using two inputs.
+  
 	puts "Our company cafeteria serves garlic bread. 
 	      Should we order some for you?(y/n)."
 	  garlic = gets.chomp
@@ -46,9 +51,7 @@ Question 2: How can i refactor this program? I think the block is too big.
 	    allergies = gets.chomp
 	  end
 	 end 
-	 # p age
-	 # p garlic
-	 # p insurance
+	
 	if age && (garlic || insurance)
 	  puts "Probably not a vampire"
 	 elsif !age && (garlic  || insurance)
@@ -59,7 +62,6 @@ Question 2: How can i refactor this program? I think the block is too big.
 	   puts  "Results inconclusive."
 	 end
 end 
-
 puts "How many employees are there?"
  employees = gets.chomp.to_i
  until employees == 0 
