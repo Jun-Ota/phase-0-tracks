@@ -13,7 +13,7 @@ def translated_char(char)
 
   if !alphabet.index(char.downcase)
      "boing"
-# Question 1: How do you read after if...
+ Question 1: How do you read after if...
   # char = a 
   # char.downcase => a => alphabet.index(a)  => ???
 
@@ -32,7 +32,7 @@ def  translate_phrase(phrase)
   while char_index < phrase.length 
     translated_response << translated_char(phrase[char_index])
    
-# Question2: How do you read the line above??
+ Question2: How do you read the line above??
   #  phrase[char_index] = phrase[0] 
   # translated_char(phrase[0])
   #  phrase = a 
