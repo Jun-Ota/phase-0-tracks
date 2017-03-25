@@ -1,9 +1,9 @@
 
 arr = [42, 89, 23, 1]
-def search_array(a,i)
+def search_array(array,integer)
    counter = 0 
-   r = a.each {|x| counter +=1 
-    if x == i 
+   result  = array.each {|integer| counter +=1 
+    if x == integer 
       p counter-1
     end 
     if counter  >= a.length  
@@ -12,8 +12,8 @@ def search_array(a,i)
    }
 end
 
-# p search_array(arr, 1)
-# p search_array(arr, 24)
+p search_array(arr, 1)
+p search_array(arr, 24)
 
 
 def fib(x)
