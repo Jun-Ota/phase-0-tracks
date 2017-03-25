@@ -1,17 +1,24 @@
 class TodoList 
-	list = ["do the dishes", "mow the lawn"]
-  
-  def 
-    
+  def initialize 
+　　 list = []
   end
 
-  def 
-    
+  def get_items(array)
+  	 list = array
   end
 
-  def 
-    
+  def add_item(array)
+  	# list << item
   end
 
-  
+   def delete_item(item)
+  #    list.delete_if do |item|
+  #     item == 
+  #    end 
+   end
+
+   def get_item(index)
+  #   list[index]   
+   end
+
 end
