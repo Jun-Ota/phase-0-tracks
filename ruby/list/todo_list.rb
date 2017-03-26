@@ -1,24 +1,24 @@
 class TodoList 
-  def initialize 
-　　 list = []
+ attr_reader :list 
+
+  def initialize(list)
+    @list = list
   end
 
-  def get_items(array)
-  	 list = array
+  def get_items
+  	@list
   end
 
-  def add_item(array)
-  	# list << item
+  def add_item(item)
+  	@list << item 
   end
 
    def delete_item(item)
-  #    list.delete_if do |item|
-  #     item == 
-  #    end 
+    @list.delete(item)
    end
 
    def get_item(index)
-  #   list[index]   
+    @list[index]   
    end
 
 end
