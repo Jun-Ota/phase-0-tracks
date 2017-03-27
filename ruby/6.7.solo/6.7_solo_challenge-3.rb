@@ -19,7 +19,7 @@
 #  -lose version
 
 def q_maker(word)
-  word.chars { |ch| print " " + "_"}
+  word.chars { |ch| print " " + "_" }
 end
 
 def q_maker2(word)
@@ -32,11 +32,16 @@ def limitation(word)
 end
 
 
-p q_maker("king")
-p q_maker2("king")
-
-
-
-  
+def answer_checker(alphabet)
+ answer_check = @word[0].map do |letter|
+    # puts letter
+     if letter == alphabet 
+       letter = alphabet
+     else 
+        letter = "_"
+     end 
+  end
+end 
+ 
 
 
