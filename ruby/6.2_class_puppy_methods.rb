@@ -73,15 +73,16 @@ def golfer
   # image result = {7 iron: 2 times of three puts}
 end
 
- final = []
+ 
+ p final = []
 
-50.times do
-   final << golfer    
+3.times do |x|
+  golfer    
 end
 
- final.each do |array|
-  array.swing
-end
+#  final.each do |array|
+#   array.swing
+# end
 
 
 

@@ -13,9 +13,10 @@ def translated_char(char)
 
   if !alphabet.index(char.downcase)
      "boing"
- Question 1: How do you read after if...
-  # char = a 
-  # char.downcase => a => alphabet.index(a)  => ???
+
+# Question 1/2: Could you tell me how do you read after if...
+# in my understanding if char = a,  char.downcase => a => alphabet.index(a)  => ???
+# => done if you cannot find a index number, it matches the if condition.
 
   elsif is_capitalized && alphabet.index(char.downcase) < halfway
     "bloop"
@@ -32,11 +33,9 @@ def  translate_phrase(phrase)
   while char_index < phrase.length 
     translated_response << translated_char(phrase[char_index])
    
- Question2: How do you read the line above??
-  #  phrase[char_index] = phrase[0] 
-  # translated_char(phrase[0])
-  #  phrase = a 
-  # translated_char()
+# Question 2/2: How do you read the line above?? I got confused on inside the ().
+   # =>done: phrase is the input you got. and index starts from 0. letter by letter 
+   # doing the translation method _char and putting it into a ""
     char_index += 1 
   end 
   translated_response
