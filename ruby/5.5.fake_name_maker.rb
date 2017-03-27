@@ -53,8 +53,9 @@ loop do
   end
 
 
-  Question1: How can I store the datas into a Hash? is hash appropriate??
-  Question2: How can I call the data from the Hash??
+  Question 1/1 : How can refactor this?? 
+      method and inputs are mixed....
+
 
 # count =  0 
 #  until count >= master_name.length  

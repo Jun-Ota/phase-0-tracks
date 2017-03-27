@@ -87,12 +87,10 @@ end
 
 
  # Question1:How to put the result array?
-   # difference between "return" "p" "puts"
+# => donedifference between "return" "p" "puts"
    # In this case the return was OK.
 
-  # Question2:How can I refactor the code above?
-
-  # Question3:What to do for the last instruction below.
+Question:What to do for the last instruction below.
 
 #Iterate over that data structure using .each and 
 #call the instance methods you wrote on each instance.
