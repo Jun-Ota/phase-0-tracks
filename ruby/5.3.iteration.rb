@@ -13,7 +13,7 @@
 #   Sw:"90y"
 # }
  # Question1:Why is the hash above error???
-# you cant start keys from integer.
+# =>you cant start keys from integer.
 
 golf_course = ["ABC","Phoenix","Gotenba","Yomiuri","Naruo","Nishinomiya-kogen"]
 
