@@ -1,0 +1,43 @@
+<<Review and Reflect.txt>>
+
+1:Name at least three categories of CSS adjustments (example: colors)?
+
+ Text Decoration,Fonts, Table,Background and Borders.
+
+
+2:What are the three ways to link a CSS rule to an HTML document? 
+  
+  External style sheet :add a link in the head of html.
+  Internal style sheet: write css sheet in the html.
+  Inline style: write css inline in the html
+  
+3:Which one is the best and why?
+  
+   External style sheet is the best way.
+   You can just concentrate on a sheet if the css is in a diffrent file. 
+   If it is in the html, the looking of the styling would seem complicated and difficult to read.
+
+
+4:What is a selector? Give examples of at least three types of selectors.
+  
+   It is a pattern to select the element you want to decorate or style.
+
+      .class/#id/* 
+
+
+5:What is the box model?
+ It is a term used in CSS to to talk about design and layout.
+ In a box model there are several elements.
+ Content-Padding-Border-Margin.
+
+6:Explain and give an example of the cascading effect of CSS.
+ 
+ Cascading effect is about the strength between the stylesheet rule. There are cases that two different stylesheet selects the same part. To chose the one to apply there is a rule.
+ More general rules are prior to specific rules.
+ 
+ ex. class > id  
+
+7:Name two CSS techniques that assist in responsive design.
+
+ @media rule and set width 100%.
+ 

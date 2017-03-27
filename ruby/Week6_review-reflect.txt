@@ -1,0 +1,27 @@
+1. What are classes? Be sure to define the following terms in your explanation and describe the relationships between them:
+
+ Class is the largest category for dividing. Class can contain variable and methods and behavior. These variables and methods are called instance variable and instance methods.And in addition to variables and methods Class can keep state which is the characteristics or data of each instance.
+
+class/state/behavior/instance variable/instance method
+
+2. What are attributes?
+ attributes are characteristics that is included in class.
+
+
+3. Give an example of a real world object, and describe how you might assign its attributes if you were to design a class to represent that object.
+ Airplane or Buss, Car can be a example of Class.
+ 
+ As these are mixture of small functions and based on many regulations, it would be a very good example of class.
+ For example in the Car class, you can add 4 tires and engine as a initialized variables. And as a method you can make methods to convert gasoline or electricity into move.
+ 
+
+4. What is the purpose of the initialize method? When does it run?
+  It will run at the very beginning of the program. You can set variables in the initialized method and call it inside other methods.
+
+5. What are modules?
+ set of related methods.
+
+6. What are the different ways you can use a module?
+
+ you can use modules with class which is called mixing.
+
