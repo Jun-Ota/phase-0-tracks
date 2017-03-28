@@ -36,25 +36,32 @@ def letter_changer(letter)
 end
 
 # User Interface
+store_name = {}
+
 loop do 
  puts "Would you like to make a fake name?(y/n)"
    choice = gets.chomp
    break if choice == "n"
-   name_holder = []
+   
    puts "Give me your first name."
   	first_name = gets.chomp.downcase
-     name_holder << first_name
-     name_holder << name_changer(first_name)
+    alias_first_name = name_changer(first_name)
+ 
    puts "Give me your last name."
     second_name = gets.chomp.downcase
-    name_holder << second_name
-    name_holder << name_changer(second_name)
-    p name_holder
-  end
+    alias_second_name = name_changer(second_name)
 
+  store_name["#{first_name} #{second_name}"] = "#{alias_second_name} #{alias_first_name}"   
+ end
 
-  Question 1/1 : How can refactor this?? 
-      method and inputs are mixed....
+  store_name.each do |name,alias|
+   p "#{name} is actually #{alias}."
+end
+
+# to make input base on one full name at once.
+
+  # Question 1/1 : How can refactor this?? 
+  #     method and inputs are mixed....
 
 
 # count =  0 

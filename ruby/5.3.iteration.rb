@@ -23,21 +23,30 @@ golf_course = ["ABC","Phoenix","Gotenba","Yomiuri","Naruo","Nishinomiya-kogen"]
    "5w" => "200y",
 }
 
-
-
 # Driver 4
 # A method that will remove items from a data structure until the condition
 # in the block evaluates to false, then stops 
 # (you may not find a perfectly working option for the hash, and that's okay).
-   golf_course.delete_if { |course|
-           bool= false
-           break if course == "Yomiuri"
-           bool =true
-    }
-    p golf_course
+   # golf_course.delete_if { |course|
+   #         bool= false
+   #         break if course == "Yomiuri"
+   #         bool =true
+   #  }
+   #  p golf_course
     
+  # golf_course.delete_if { |course|
+  #          unless course == "Yomiuri"
+  #          end
+  #   }
+  
+  # p golf_course
 
-Question 1/2 :Why do I need to add "bool = true "?
+
+# 5.3
+# while i < 3 do
+#   puts i
+#   i += 1
+# end
 
 
 # Driver 3 
@@ -66,7 +75,7 @@ golf_course.each {|course|
  p golf_course
 }
   
- Question 2/2 : How can I stop printing 5 times. and show the result only once?
+  Question 2/2 : How can I stop printing 5 times. and show the result only once?
 
 # golf_club.each {|club, yard| 
 #  golf_club.delete_if {|club, yard| club != "1w" }
