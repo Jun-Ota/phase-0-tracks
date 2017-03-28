@@ -1,7 +1,7 @@
 class Dancer
   attr_reader :name
-  attr_reader :age
-  attr_writer :age 
+  attr_accessor :age
+  attr_reader :list  
   
  def initialize(name,age) 
  	@name = name
@@ -9,17 +9,6 @@ class Dancer
  	@list = []
  end
 
- def name
-   @name
- end
- 
- def age
-   @age
- end
- 
- def write(age)
-  @age = age 
- end
  
  def pirouette
   "*twirls*"
@@ -29,19 +18,18 @@ class Dancer
   "*bows*"
  end
  
-
- def card 
- 	
- 	def queue_dance_with(dancer1)
+ def queue_dance_with(dancer1)
      @list << dancer1
-    end 
+ end 
     
-    @list
-
+ def card
+  @list 
  end
 
- def card 
-   # @card << @waiting
+
+ def begin_next_dance
+   dancer = @list.shift
+   "Now dancing with #{dancer}." 
  end
 
 end
