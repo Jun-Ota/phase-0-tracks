@@ -24,26 +24,22 @@
 # the letter right before it? 
 # Hint: In the IRB session above, you learned how to ask a string for the index of a letter. 
 # "abcdefghijklmnopqrstuvwxyz" counts as a string.
- 
+
 def decrypt(str)
-  str.split("").map! do |alphabet|
-    puts alphabet
-    puts find_previous
-    # return find_previous(letter) 
+  output = ""
+  str.split("").map! do |letter|
+     output << find_previous(letter)
   end
 end
 
-def find_previous
-  # return  "find previous letter" + " #{letter}" 
+def find_previous(letter)
   alphabet = "abcdefghijklmnopqrstuvwxyz"
-  alphabet[letter.index]
-
- QUESTION2/2: HOW CAN I CHANGE THE LETTER TO THE previous LETTER? 
-   =>if  edge case z = a otherwise index -1?  z= -1 so no nee to add edgecase
-
+  alphabet[alphabet.index(letter)-1]
 end
 
- decrypt("abc")
+p decrypt("abc")
+
+
 
 # Question 3: What is the difference between return and puts, p.
 # => done

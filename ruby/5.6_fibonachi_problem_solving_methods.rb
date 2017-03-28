@@ -11,6 +11,9 @@ def search_array(array,integer)
     end 
    }
 end
+# the point is that it sets two if statements. to determine the index you need to -1 from the actual number.
+
+
 
 p search_array(arr, 1)
 p search_array(arr, 24)
@@ -30,7 +33,8 @@ end
  fib(6)
  fib(100)
 
-  Question: I want to know how these two methods are processing.
+  # Question: I want to know how these two methods are processing.
+# the point is how you set index 3 a number. try to reveal using the first two arrays.
  
 # Release 2
 # 1

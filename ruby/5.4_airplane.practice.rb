@@ -39,20 +39,24 @@ airplane = {
         meals: []
     }
 }
-# 1. Guess the return value of this line:
- # p airplane[:first_class][:pretty_name]
-# 2.
-# Guess the return value of this line:
-# p airplane[:business_class][:meals]
-# 3.Guess the return value of this line:
-# p  airplane[:business_class][:meals][1]
-# 4. How will this line affect the data structure?
- # airplane[:coach][:meals].push("Sad Plastic Tray of Corn")
- # p airplane[:coach][:meals]
-# 5.How would you reverse the meals list in First Class?
- # p airplane[:first_class][:meals].reverse
- # p airplane[:first_class][:meals]
-# Add a line of code that does that here.
-# 6.How would you lowercase the pretty name of one of the classes?
- # p  airplane[:business_class][:pretty_name].downcase
-# ====================================== 
+1. Guess the return value of this line:
+ p airplane[:first_class][:pretty_name]
+
+2.Guess the return value of this line:
+p airplane[:business_class][:meals]
+
+3.Guess the return value of this line:
+p  airplane[:business_class][:meals][1]
+
+4. How will this line affect the data structure?
+ airplane[:coach][:meals].push("Sad Plastic Tray of Corn")
+ p airplane[:coach][:meals]
+
+5.How would you reverse the meals list in First Class?
+ p airplane[:first_class][:meals].reverse
+ p airplane[:first_class][:meals]
+Add a line of code that does that here.
+
+6.How would you lowercase the pretty name of one of the classes?
+ p  airplane[:business_class][:pretty_name].downcase
+====================================== 
