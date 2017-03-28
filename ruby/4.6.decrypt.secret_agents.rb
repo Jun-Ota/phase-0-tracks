@@ -38,7 +38,8 @@ def find_previous
   alphabet = "abcdefghijklmnopqrstuvwxyz"
   alphabet[letter.index]
 
- QUESTION2: HOW CAN I CHANGE THE LETTER TO THE previous LETTER?
+ QUESTION2/2: HOW CAN I CHANGE THE LETTER TO THE previous LETTER? 
+   =>if  edge case z = a otherwise index -1?  z= -1 so no nee to add edgecase
 
 end
 

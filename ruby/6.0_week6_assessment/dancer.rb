@@ -33,7 +33,7 @@ class Dancer
  def card 
  	
  	def queue_dance_with(dancer1)
-     @list << dancer1
+     @dancer1
     end 
     
     @list
