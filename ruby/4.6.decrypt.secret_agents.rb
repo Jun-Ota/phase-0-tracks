@@ -33,6 +33,8 @@
 #   end
 #   output 
 # end
+
+
  def decrypt(str)
   output = ""
   str.split("").map! do |letter|

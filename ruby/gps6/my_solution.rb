@@ -20,6 +20,7 @@ class VirusPredictor
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
+  # as the arugments are 
 
   private
 
@@ -68,7 +69,18 @@ end
 
 # DRIVER CODE
  # initialize VirusPredictor for each state
+ # using .each to go through the hash.
+  # ex.    
 
+  # STATE_DATA.each do |key1,key2,value|
+  #  key1 = VirusPredictor.new(key1,key2,value)
+  #  key.virus_effects
+  # end 
+#   STATE_DATA.each do |key,value|
+#   value.each { |value,value2| }
+# 　end
+
+state_of_origin, population_density, population)
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
