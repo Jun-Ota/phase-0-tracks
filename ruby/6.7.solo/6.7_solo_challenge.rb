@@ -1,6 +1,8 @@
 # pseudocode
 
-# method1 :get a word and transform into a hidden output 
+# method1 :get a word and transform into a hidden output
+
+king  " _ _" 
 
 # method2: limit the number of guess they can make (word.length) and announce 
 
@@ -18,6 +20,15 @@
 #  -win version 
 #  -lose version
 
+
+# =======================
+
+# ==>> most important: model = system i have to make. how i run.
+# view = what will they see.this is the user interface.
+# controller = bridge to connect the view and model.
+
+
+# =======================
 # Business Logic
 class WordGuessGame
   attr_writer :word

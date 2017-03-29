@@ -25,12 +25,27 @@
 # Hint: In the IRB session above, you learned how to ask a string for the index of a letter. 
 # "abcdefghijklmnopqrstuvwxyz" counts as a string.
 
-def decrypt(str)
+# def decrypt(str)
+#   output = ""
+#   str.split("").each do |letter|
+#      output << find_previous(letter)
+#      # overwritten changed every.
+#   end
+#   output 
+# end
+ def decrypt(str)
   output = ""
   str.split("").map! do |letter|
-     output << find_previous(letter)
+     find_previous(letter)
+     # overwritten changed every.
   end
+  str 
 end
+
+
+#  ["a","b","c"]
+# =>["z","a","b"]
+# => output "z" + "a"=> "zab"
 
 def find_previous(letter)
   alphabet = "abcdefghijklmnopqrstuvwxyz"
