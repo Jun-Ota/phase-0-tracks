@@ -24,3 +24,17 @@ reindeer.take_off(3000)
 reindeer.land("Cape Town")
 reindeer.name = "The Reindeer Formerly Known as Dasher"
 puts "#{reindeer.name} is in #{reindeer.location}."
+
+
+# =============================
+# [getter method]
+  # def sides
+  #   @sides
+  # end 
+  # [setter method]
+# def stories=(value)
+  #   @stories = value
+  # end
+# 
+# 
+# 
