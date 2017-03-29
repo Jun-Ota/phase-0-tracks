@@ -8,7 +8,7 @@ def say_hello
   name1 = "Steve"
   name2 = "Tiahna"
   puts "Why,hello there"
-  yield (name1,name2)
+  yield(name1,name2)
 end
 
 say_hello do |name1,name2|
@@ -16,14 +16,14 @@ say_hello do |name1,name2|
   end
 
 
-Question 1/1: Why is this error? the one below works....
+# Question 1/1: Why is this error? the one below works....
   
-def say_hello
-puts "Hi, hello there!"
-yield("steve","tiana")
-end
+# def say_hello
+# puts "Hi, hello there!"
+# yield("steve","tiana")
+# end
 
-say_hello{|name1,name2| puts "Great to see you, #{name1} and #{name2}!"}  
+# say_hello{|name1,name2| puts "Great to see you, #{name1} and #{name2}!"}  
 
 # .map sample
 

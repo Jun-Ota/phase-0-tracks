@@ -38,23 +38,24 @@
 
 class  Golf 
   def initialize 
-    "Playing golf is wonderful!!"
+    p "Playing golf is wonderful!!"
   end 
 
   def club_selecter
     yards_left = rand(200)
    if 150 < yards_left
-   	"6 IRON"
+   	p "6 IRON"
    elsif 100 < yards_left && yards_left < 150
-    "8 IRON"
+    p "8 IRON"
    else
-    "Pitching Wedge"
+    p "Pitching Wedge"
    end
   end
 
   def putt_counter
     number = rand(5)
-  	"#{number} times of three puts"
+  	p "#{number} times of three puts"
+
   end
   
   def swing
@@ -63,39 +64,36 @@ class  Golf
 
 end
 
-def golfer
-  result = {}
-  golf = Golf.new
-    club = golf.club_selecter
-    three = golf.putt_counter
-  result.store(club,three)
-   result 
-  # image result = {7 iron: 2 times of three puts}
-end
-
+# def golfer
+#   result = {}
+#   golf = Golf.new
+#     club = golf.club_selecter
+#     three = golf.putt_counter
+#   result.store(club,three)
+#    result 
+#   # image result = {7 iron: 2 times of three puts}
+# end
+ 
  final = []
 50.times do
-   final << golfer    
+   final << Golf.new    
 end
 
  final.each do |array|
-
- 
-
+   array.swing
+   array.putt_counter
+   array.club_selecter
 end
 
 
+ 
+# Question:What to do for the last instruction below.
 
- # Question1:How to put the result array?
-# => donedifference between "return" "p" "puts"
-   # In this case the return was OK.
+# Iterate over that data structure using .each and 
+# call the instance methods you wrote on each instance.
 
-Question:What to do for the last instruction below.
-
-#Iterate over that data structure using .each and 
-#call the instance methods you wrote on each instance.
-#So if you wrote a Gymnast class, this is where you'd call .flip 
-#and .jump on each of your instances of Gymnast.
+# So if you wrote a Gymnast class, this is where you'd call .flip 
+# and .jump on each of your instances of Gymnast.
 
 
 

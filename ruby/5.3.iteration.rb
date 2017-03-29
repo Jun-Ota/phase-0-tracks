@@ -72,10 +72,10 @@ golf_course = ["ABC","Phoenix","Gotenba","Yomiuri","Naruo","Nishinomiya-kogen"]
 # Driver 1
 golf_course.each {|course|
   golf_course.delete_if  {|course| course == "ABC"}
- p golf_course
+  golf_course
 }
-  
-  Question 2/2 : How can I stop printing 5 times. and show the result only once?
+p golf_course 
+  # Question 2/2 : How can I stop printing 5 times. and show the result only once?
 
 # golf_club.each {|club, yard| 
 #  golf_club.delete_if {|club, yard| club != "1w" }
