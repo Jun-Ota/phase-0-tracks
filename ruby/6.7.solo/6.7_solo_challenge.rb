@@ -2,19 +2,19 @@
 
 # method1 :get a word and transform into a hidden output
 
-king  " _ _" 
-
 # method2: limit the number of guess they can make (word.length) and announce 
+ # initialize 
 
 # UI : ask the other user to give their guess.
 
 # method 3 : compare the input with the word set. 
 #  -iterate through all the alphabet.
 #  -if there is match.
-#  -replace the hidden(_) to the alphabet and return
+#  
+# method 4: replace the hidden(_) to the alphabet and return
 
 #  -do the proccess above for limited number of times.
-#  -set rule not to count the same alphabet
+#  -set rule not to count the same alphabet.
 
 # method : compare the final result and give final feedback
 #  -win version 
