@@ -3,7 +3,7 @@
 # We spent [#] hours on this challenge.
 # =======================================
 # EXPLANATION OF require_relative
-#You can call “require” and “require_relative” to reference files, repositories, or entire libraries of code. 
+# You can call “require” and “require_relative” to reference files, repositories, or entire libraries of code. 
 # “Require” points to code, installed from remote locations (e.g., Ruby gems) 
 # within your Ruby path. 
 # Alternatively, “require_relative” looks for code according to a given relative path.
@@ -26,8 +26,8 @@
 # Advice to continue the release.
 # 1:Think about instance variables: do you need parameters, when you have instance variables?
 # => No you dont. So I deleted the parameters from all the methods except the initialized.
-# Think about an alternative way to write IF/ELSE.
-# CASE....WHEN.....THEN
+# 2:Think about an alternative way to write IF/ELSE.
+#   =>CASE....WHEN.....THEN
 # =========================================
 require_relative 'state_data'
 class VirusPredictor
@@ -45,49 +45,85 @@ class VirusPredictor
   
   private
   
+  # def predicted_deaths
+  #   # predicted deaths is solely based on population density
+  #   if @population_density >= 200
+  #     number_of_deaths = (@population * 0.4).floor
+  #   elsif @population_density >= 150
+  #     number_of_deaths = (@population * 0.3).floor
+  #   elsif @population_density >= 100
+  #     number_of_deaths = (@population * 0.2).floor
+  #   elsif @population_density >= 50
+  #     number_of_deaths = (@population * 0.1).floor
+  #   else
+  #     number_of_deaths = (@population * 0.05).floor
+  #   end
+  #   print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+  # end
+# Reinfactor predicted_deaths by using case structure.
   def predicted_deaths
-    # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
-    end
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+   case @population_density
+   when 200 >=
+    number_of_deaths = (@population * 0.4).floor
+   when 150 >=
+    number_of_deaths = (@population * 0.3).floor
+   when 100 >=
+    number_of_deaths = (@population * 0.2).floor
+   when 50 >=
+    number_of_deaths = (@population * 0.1).floor
+   else
+    number_of_deaths = (@population * 0.05).floor
+   end 
+   print "#{@state} will lose #{number_of_deaths} people in this outbreak"
   end
-  
+
+  # def speed_of_spread #in months
+  #   # We are still perfecting our formula here. The speed is also affected
+  #   # by additional factors we haven't added into this functionality.
+  #   speed = 0.0
+  #   if @population_density >= 200
+  #     speed += 0.5
+  #   elsif @population_density >= 150
+  #     speed += 1
+  #   elsif @population_density >= 100
+  #     speed += 1.5
+  #   elsif @population_density >= 50
+  #     speed += 2
+  #   else
+  #     speed += 2.5
+  #   end
+  #   puts " and will spread across the state in #{speed} months.\n\n"
+  # end
   def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
-    if @population_density >= 200
+    case  @population_density
+    when 200 >=
       speed += 0.5
-    elsif @population_density >= 150
+    when 150 >=
       speed += 1
-    elsif @population_density >= 100
+    when 100 >=
       speed += 1.5
-    elsif @population_density >= 50
+    when 50 >=
       speed += 2
     else
       speed += 2.5
     end
     puts " and will spread across the state in #{speed} months.\n\n"
   end
+
+
 end
 #=======================================================================
 # DRIVER CODE and code for Release 4 
 # initialize VirusPredictor for each state
 # using .each to go through the hash.
 # bracket notation
-  # STATE_DATA.each do |state,inner_hash|
-  #   state = VirusPredictor.new(state,inner_hash[:population_density],inner_hash[:population])
-  #   state.virus_effects
-  # end 
+  STATE_DATA.each do |state,inner_hash|
+    state = VirusPredictor.new(state,inner_hash[:population_density],inner_hash[:population])
+    state.virus_effects
+  end 
 #=======================================
 #Release 6 
 # Test code for private method.If you set private you cannnot call outside the class 
@@ -108,3 +144,39 @@ end
 
 #=======================================================================
 # Reflection Section
+# 1:What are the differences between the two different hash syntaxes shown in the state_data file?
+# => Inside the value of the first hash there is a key-value pair.
+
+# 2:What does require_relative do? How is it different from require?
+# =>You can call “require” and “require_relative” to reference files, repositories, or entire libraries of code. 
+# “Require” points to code, installed from remote locations (e.g., Ruby gems) 
+# within your Ruby path. 
+# Alternatively, “require_relative” looks for code according to a given relative path.
+ # With require_relative, if you give the wrong path, your program will break.
+
+# 3:What are some ways to iterate through a hash?
+# => hash.each dp |key,value|
+       # new_vaiable = class.new(key,value[:next_key],value[:second_next_key])
+
+# 4:When refactoring virus_effects, what stood out to you about the variables, if anything?
+# =>I remembered that once we set a global instance we do not need to take it as a parameter or argument.
+
+# 5:What concept did you most solidify in this challenge?
+# => iterating through hash. and relative.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
