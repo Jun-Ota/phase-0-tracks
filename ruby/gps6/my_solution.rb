@@ -1,33 +1,35 @@
 # Virus Predictor
-
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge by myself with my guide ].
 # We spent [#] hours on this challenge.
-
+# =======================================
 # EXPLANATION OF require_relative
-#
-#..//
+#You can call “require” and “require_relative” to reference files, repositories, or entire libraries of code. 
+# “Require” points to code, installed from remote locations (e.g., Ruby gems) 
+# within your Ruby path. 
+# Alternatively, “require_relative” looks for code according to a given relative path.
+ # With require_relative, if you give the wrong path, your program will break.
+# =======================================
+# Method explanation
 # initialize:
 #  -takes 3 arguments.
 #  -set a instance variable that could be called inside the class.
-
 # virus_effects:
 #  run 2 methods. predicted death and spread speed.
-
 # predicted_deaths:
 #  based on the 3 arguments, returns the number of death.
-
 # speed_of_spread:
 #  takes 2 arguments. based on population density, it  returns the speed of spread.
-
+# ========================================
 # gems: a library of reusable code
 # require bcrypt
-# $state_data
-# Think about instance variables: do you need parameters, when you have instance variables?
+# $state_data  <= What was this for???
+# Advice to continue the release.
+# 1:Think about instance variables: do you need parameters, when you have instance variables?
+# => No you dont. So I deleted the parameters from all the methods except the initialized.
 # Think about an alternative way to write IF/ELSE.
 # CASE....WHEN.....THEN
-
+# =========================================
 require_relative 'state_data'
-
 class VirusPredictor
 
   def initialize(state_of_origin, population_density, population)
@@ -35,16 +37,15 @@ class VirusPredictor
     @population = population
     @population_density = population_density
   end
-
+  
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
-  # as the arugments are 
-
+  
   private
-
-  def predicted_deaths(population_density, population, state)
+  
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -57,16 +58,13 @@ class VirusPredictor
     else
       number_of_deaths = (@population * 0.05).floor
     end
-
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
-
-  def speed_of_spread(population_density, state) #in months
+  
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
-
     if @population_density >= 200
       speed += 0.5
     elsif @population_density >= 150
@@ -78,43 +76,35 @@ class VirusPredictor
     else
       speed += 2.5
     end
-
     puts " and will spread across the state in #{speed} months.\n\n"
-
   end
-
 end
-
 #=======================================================================
-
-# DRIVER CODE
- # initialize VirusPredictor for each state
- # using .each to go through the hash.
-  # ex.    
+# DRIVER CODE and code for Release 4 
+# initialize VirusPredictor for each state
+# using .each to go through the hash.
 # bracket notation
-  STATE_DATA.each do |state,inner_hash|
-    state = VirusPredictor.new(state,inner_hash[:population_density],inner_hash[:population])
-    state.virus_effects
-  end 
-
-#   STATE_DATA.each do |key,value|
-#   value.each { |value,value2| }
-# 　end
-
+  # STATE_DATA.each do |state,inner_hash|
+  #   state = VirusPredictor.new(state,inner_hash[:population_density],inner_hash[:population])
+  #   state.virus_effects
+  # end 
+#=======================================
+#Release 6 
+# Test code for private method.If you set private you cannnot call outside the class 
+# state = VirusPredictor.new("Japan",56.0,342343)
+# state.virus_effects
+# ================================
+# Initial Driver code 
 # (state_of_origin, population_density, population)
-
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
-
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
-
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
-
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
-
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
+# ==================================
 
 #=======================================================================
 # Reflection Section
