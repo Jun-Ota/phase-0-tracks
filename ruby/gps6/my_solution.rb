@@ -5,7 +5,27 @@
 
 # EXPLANATION OF require_relative
 #
-#
+#..//
+# initialize:
+#  -takes 3 arguments.
+#  -set a instance variable that could be called inside the class.
+
+# virus_effects:
+#  run 2 methods. predicted death and spread speed.
+
+# predicted_deaths:
+#  based on the 3 arguments, returns the number of death.
+
+# speed_of_spread:
+#  takes 2 arguments. based on population density, it  returns the speed of spread.
+
+# gems: a library of reusable code
+# require bcrypt
+# $state_data
+# Think about instance variables: do you need parameters, when you have instance variables?
+# Think about an alternative way to write IF/ELSE.
+# CASE....WHEN.....THEN
+
 require_relative 'state_data'
 
 class VirusPredictor
@@ -71,16 +91,17 @@ end
  # initialize VirusPredictor for each state
  # using .each to go through the hash.
   # ex.    
+# bracket notation
+  STATE_DATA.each do |state,inner_hash|
+    state = VirusPredictor.new(state,inner_hash[:population_density],inner_hash[:population])
+    state.virus_effects
+  end 
 
-  # STATE_DATA.each do |key1,key2,value|
-  #  key1 = VirusPredictor.new(key1,key2,value)
-  #  key.virus_effects
-  # end 
 #   STATE_DATA.each do |key,value|
 #   value.each { |value,value2| }
 # 　end
 
-state_of_origin, population_density, population)
+# (state_of_origin, population_density, population)
 
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
