@@ -111,64 +111,73 @@
 
 #=====<<BUSINESS LOGIC>>===============
 class GuessGame
-  attr_accessor :
-
-  def initialize 
+  def initialize(target)
   	@target = target 
   	@answer = ""
     @guess_stock = []
     @count = 0
+    @return_answer = ""
   end 
 
-def quiz_maker
-  @target.each_char do |letter| 
-  	@answer <<  "_" + " "  
+  def quiz_maker
+	@target.each_char do |letter| 
+	@answer <<  "_" + " "  
+	end
+	p @answer
   end
-end
 
-def return_answer
- return_answer = @target.each_char {|letter| letter + " "}
-end 
+  def return_answer
+   @return_answer = @target.each_char {|letter| letter + " "}
+  end 
 
-def guess_limitter
-   number_of_guess = target.length
-end
+  def guess_limitter
+   @number_of_guess = @target.length
+   p @number_of_guess
+  end
 
-def guess_array(guess)
-  guess_stock << guess
-end
+  def guess_array(guess)
+   @guess_stock << guess
+   p @guess_stock
+  end
 
-def attempt_counter(guess)
-   guess_stock.each {|letter|
+  def attempt_counter(guess)
+   @guess_stock.each {|letter|
      if guess == letter 
-       count += 0
+       @count += 0
      else 
-       count += 1
-     end
-   }
-end        
+       @count += 1
+     end}
+     p @count
+  end        
 
-def evaluater(guess)
-  return_answer.chars { |letter|
-    if guess == letter
-       index_number = return_answer.index(guess)  
-      answer[index_number] = guess
-      p answer
-    else
-      answer
-    end
-  }
-end   
+  def evaluater(guess)
+    @return_answer.chars { |letter|
+      if guess == letter
+        index_number = @return_answer.index(guess)  
+        @answer[index_number] = guess
+        p @answer
+      else
+        @answer
+      end}
+  end   
 
-def ending
-  if target == answer 
-  	puts "Conratulations!!!"
-  else 
-  	puts "You Lose"
+  def ending
+	if @target == @answer 
+	  puts "Conratulations!!!"
+	else 
+	  puts "You Lose"
+	end
   end
 end
 
-end
+guess_game = GuessGame.new("king")
+guess_game.quiz_maker
+guess_game.return_answer
+guess_game.guess_limitter
+guess_game.guess_array("n")
+guess_game.attempt_counter("n")
+guess_game.evaluater("n")
+guess_game.ending
 
 
 

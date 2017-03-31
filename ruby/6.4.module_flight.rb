@@ -5,7 +5,7 @@ module Flight
 end
 
 class Bird
-  include Flight
+  include Flight  
 end
 
 class Plane
