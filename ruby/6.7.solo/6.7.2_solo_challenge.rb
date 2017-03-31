@@ -105,17 +105,18 @@
 #   	puts "You Lose"
 #   end
 # end
-
 # ending
-
 
 #=====<<BUSINESS LOGIC>>===============
 class GuessGame
+  attr_accessor :guess, :target, :count
+
   def initialize(target)
   	@target = target 
   	@answer = ""
     @guess_stock = []
     @count = 0
+    @guess = ""
     @return_answer = ""
   end 
 
@@ -126,40 +127,45 @@ class GuessGame
 	p @answer
   end
 
-  def return_answer
-   @return_answer = @target.each_char {|letter| letter + " "}
-  end 
-
   def guess_limitter
-   @number_of_guess = @target.length
-   p @number_of_guess
+    @number_of_guess = @target.length
+   p "You have #{@number_of_guess} times to attempt."
   end
 
-  def guess_array(guess)
-   @guess_stock << guess
-   p @guess_stock
+  def answer_check
+    @target.each_char {|letter| @return_answer << letter + " "}
+    @return_answer
+  end 
+ 
+  def guess_array
+   @guess_stock << @guess
+   @guess_stock
   end
 
-  def attempt_counter(guess)
+  def evaluater
+  	 #cannnot use the @guess  
+    @return_answer.chars { |letter|
+      if @guess == letter
+        index_number = @return_answer.index(@guess)  
+        @answer[index_number] = @guess
+        @answer
+      else
+        @answer
+      end
+     }
+      @answer
+   end   
+
+  def attempt_counter
    @guess_stock.each {|letter|
-     if guess == letter 
+     if @guess == letter 
        @count += 0
      else 
        @count += 1
      end}
-     p @count
-  end        
-
-  def evaluater(guess)
-    @return_answer.chars { |letter|
-      if guess == letter
-        index_number = @return_answer.index(guess)  
-        @answer[index_number] = guess
-        p @answer
-      else
-        @answer
-      end}
-  end   
+     p "You have #{@count} times left."
+     @count 
+  end          
 
   def ending
 	if @target == @answer 
@@ -168,29 +174,57 @@ class GuessGame
 	  puts "You Lose"
 	end
   end
+  # def combination
+  # 	 guess_game.answer_check
+  # 	 guess_game.evaluater
+  # 	 guess_game.attempt_counter
+  # end 
 end
 
-guess_game = GuessGame.new("king")
-guess_game.quiz_maker
-guess_game.return_answer
-guess_game.guess_limitter
-guess_game.guess_array("n")
-guess_game.attempt_counter("n")
-guess_game.evaluater("n")
-guess_game.ending
-
-
-
-
 #======<<USER INTERFACE>>==============
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
-# 
+ # puts "Welcome to the Guess Game!"
+ # puts "Give me a word!"
+ #  target = gets.chomp
+ #   guess_game = GuessGame.new(target)
+ #   guess_game.quiz_maker
+
+ # puts "So time to start guessing!"
+ #   guess_game.guess_limitter
+
+
+# =========Problem here============
+# until @count < "target".length
+#     puts "Give me your guess in a letter."
+#   	 @guess = gets.chomp
+#     guess_game.answer_check
+#    	guess_game.evaluater
+#    	guess_game.attempt_counter
+# end
+
+ 
+
+# until @count = target.length 
+#  puts "Give me your guess in a letter."
+#   @guess = gets.chomp
+#   guess_game.flow
+# end
+#   guess_game.ending
+
+
+# puts "Give me your guess in a letter?"
+#   @guess = gets.chomp 
+#   p @guess 
+#   guess_game.answer_check
+#   p @guess
+#   guess_game.evaluater
+#   guess_game.attempt_counter
+# ================================
+# Test Code
+# guess_game = GuessGame.new("king")
+# guess_game.quiz_maker
+# guess_game.return_answer
+# guess_game.guess_limitter
+# guess_game.guess_array("n")
+# guess_game.attempt_counter("n")
+# guess_game.evaluater("n")
+# guess_game.ending

@@ -32,4 +32,5 @@ describe Calculator do
 end
 
 # running code needs to be rspec ****
+# check the file SPEC version not the program itself 
 # if you need specific resutl rspec -fd ****
