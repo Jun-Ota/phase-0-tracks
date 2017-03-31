@@ -182,24 +182,21 @@ class GuessGame
 end
 
 #======<<USER INTERFACE>>==============
- # puts "Welcome to the Guess Game!"
- # puts "Give me a word!"
- #  target = gets.chomp
- #   guess_game = GuessGame.new(target)
- #   guess_game.quiz_maker
-
- # puts "So time to start guessing!"
- #   guess_game.guess_limitter
-
-
+ puts "Welcome to the Guess Game!"
+ puts "Give me a word!"
+  target = gets.chomp
+   guess_game = GuessGame.new(target)
+   guess_game.quiz_maker
+ puts "So time to start guessing!"
+   guess_game.guess_limitter
 # =========Problem here============
-# until @count < "target".length
-#     puts "Give me your guess in a letter."
-#   	 @guess = gets.chomp
-#     guess_game.answer_check
-#    	guess_game.evaluater
-#    	guess_game.attempt_counter
-# end
+until @count < @target.length
+    puts "Give me your guess in a letter."
+  	 @guess = gets.chomp
+    guess_game.answer_check
+   	guess_game.evaluater
+   	guess_game.attempt_counter
+end
 
  
 
