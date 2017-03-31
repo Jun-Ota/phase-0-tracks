@@ -45,37 +45,44 @@ class VirusPredictor
   
   private
   
-  # def predicted_deaths
-  #   # predicted deaths is solely based on population density
-  #   if @population_density >= 200
-  #     number_of_deaths = (@population * 0.4).floor
-  #   elsif @population_density >= 150
-  #     number_of_deaths = (@population * 0.3).floor
-  #   elsif @population_density >= 100
-  #     number_of_deaths = (@population * 0.2).floor
-  #   elsif @population_density >= 50
-  #     number_of_deaths = (@population * 0.1).floor
-  #   else
-  #     number_of_deaths = (@population * 0.05).floor
-  #   end
-  #   print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-  # end
-# Reinfactor predicted_deaths by using case structure.
   def predicted_deaths
-   case @population_density
-   when 200 >=
-    number_of_deaths = (@population * 0.4).floor
-   when 150 >=
-    number_of_deaths = (@population * 0.3).floor
-   when 100 >=
-    number_of_deaths = (@population * 0.2).floor
-   when 50 >=
-    number_of_deaths = (@population * 0.1).floor
-   else
-    number_of_deaths = (@population * 0.05).floor
-   end 
-   print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+    # predicted deaths is solely based on population density
+    if @population_density >= 200
+      x = 0.4
+    elsif @population_density >= 150
+      x = 0.3
+    elsif @population_density >= 100
+      x = 0.2
+    elsif @population_density >= 50
+      x = 0.1
+    else
+      x = 0.05
+    end
+    number_of_deaths = (@population * x ).floor
+    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
   end
+   
+
+# Reinfactor predicted_deaths by using case structure.
+  # def predicted_deaths
+  #  case @population_density
+  #  when 200 >=
+  #   number_of_deaths = (@population * 0.4).floor
+  #  when 150 >=
+  #   number_of_deaths = (@population * 0.3).floor
+  #  when 100 >=
+  #   number_of_deaths = (@population * 0.2).floor
+  #  when 50 >=
+  #   number_of_deaths = (@population * 0.1).floor
+  #  else
+  #   number_of_deaths = (@population * 0.05).floor
+  #  end 
+  #  print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+  # end
+
+
+
+
 
   # def speed_of_spread #in months
   #   # We are still perfecting our formula here. The speed is also affected
