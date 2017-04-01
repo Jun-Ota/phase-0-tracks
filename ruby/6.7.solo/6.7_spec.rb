@@ -16,6 +16,7 @@ describe GuessGame do
   end
 
   it "store the guess into a array." do
+    # preparation step 
     expect(guess_game.guess_array).to eq [""]
   end
 
