@@ -15,7 +15,7 @@
 #  take an argument and change it into a certain type.
 #   => for example  "king" => "_ _ _ _" ("letter" + "_" )
 #   =>  the word should be an argument taken into instance variable.
-    
+
 # def quiz_maker(target)
 #   answer = " "
 #   target.each_char do |letter| 
@@ -87,7 +87,7 @@
 # end
 
 # evaluater("k")
- 
+
 
 #  evaluater("i")
 
@@ -118,32 +118,32 @@ class GuessGame
     @count = 0
     @guess = ""
     @return_answer = ""
+    quiz_maker
   end 
 
   def quiz_maker
-	@target.each_char do |letter| 
-	@answer <<  "_" + " "  
-	end
-	p @answer
-  end
+   @target.each_char do |letter| 
+     @answer <<  "_" + " "  
+   end
+   p @answer
+ end
 
-  def guess_limitter
-    @number_of_guess = @target.length
-   p "You have #{@number_of_guess} times to attempt."
-  end
+ def guess_limitter
+  @number_of_guess = @target.length
+  p "You have #{@number_of_guess} times to attempt."
+end
 
-  def answer_check
-    @target.each_char {|letter| @return_answer << letter + " "}
-    @return_answer
-  end 
- 
-  def guess_array
-   @guess_stock << @guess
-   @guess_stock
-  end
+def answer_check
+  @target.each_char {|letter| @return_answer << letter + " "}
+  @return_answer
+end 
 
-  def evaluater
-  	 #cannnot use the @guess  
+def guess_array
+ @guess_stock << @guess
+ @guess_stock
+end
+
+def evaluater
     @return_answer.chars { |letter|
       if @guess == letter
         index_number = @return_answer.index(@guess)  
@@ -152,9 +152,9 @@ class GuessGame
       else
         @answer
       end
-     }
-      @answer
-   end   
+    }
+    p @answer
+end   
 
   def attempt_counter
    @guess_stock.each {|letter|
@@ -163,42 +163,43 @@ class GuessGame
      else 
        @count += 1
      end}
-     p "You have #{@count} times left."
+     p "You have #{@target.length}-#{@count} times left."
      @count 
-  end          
+   end          
 
-  def ending
-	if @target == @answer 
-	  puts "Conratulations!!!"
-	else 
-	  puts "You Lose"
-	end
-  end
-  # def combination
-  # 	 guess_game.answer_check
-  # 	 guess_game.evaluater
-  # 	 guess_game.attempt_counter
-  # end 
+   def ending
+     if @target == @answer 
+       puts "Conratulations!!!"
+     else 
+       puts "You Lose"
+     end
+   end
+
+  def combination
+  	 answer_check
+  	 evaluater
+  	 attempt_counter
+  end 
 end
 
 #======<<USER INTERFACE>>==============
- puts "Welcome to the Guess Game!"
- puts "Give me a word!"
-  target = gets.chomp
-   guess_game = GuessGame.new(target)
-   guess_game.quiz_maker
- puts "So time to start guessing!"
-   guess_game.guess_limitter
-# =========Problem here============
-until @count < @target.length
-    puts "Give me your guess in a letter."
-  	 @guess = gets.chomp
-    guess_game.answer_check
-   	guess_game.evaluater
-   	guess_game.attempt_counter
-end
+puts "Welcome to the Guess Game!"
+puts "Give me a word!"
+target = gets.chomp
+guess_game = GuessGame.new(target)
+puts "So time to start guessing!"
+guess_game.guess_limitter
 
- 
+until guess_game.count > guess_game.target.length
+  puts "Give me your guess in a letter."
+  # @guess = gets.chomp below is the way to take the input into the class
+   guess_game.guess = gets.chomp
+   guess_game.combination
+   guess_game.count  += 1
+end
+ guess_game.ending
+
+# =====================================
 
 # until @count = target.length 
 #  puts "Give me your guess in a letter."
