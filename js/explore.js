@@ -5,7 +5,12 @@
 // pick up the letter from the end
 // 
 
-var str = king 
-for (var i = 0; i < str.lengt; i++ ){
-  console.log(str[i]);
+// var str = king 
+// for (var i = 0; i < str.lengt; i++ ){
+//   console.log(str[i]);
+// }
+
+// reverse the string
+function reverse(str){
+   
 }
