@@ -3,12 +3,16 @@ var currentlyLearning = "Ruby";
 var daysProgramming = 21;
 var enjoyingCoding = true;
 var biggestComplaint = null;
+
 // print a variable
 console.log("currently_learning has a value of " + currentlyLearning);
+
 // reassign a variable
 currentlyLearning = "JavaScript";
+
 // print the new value of the variable
 console.log("currently_learning has a value of " + currentlyLearning);
+
 //Boolean
 var isOver21 = true;
 var drinksAlcohol = true;
@@ -19,17 +23,18 @@ if (isOver21 && drinksAlcohol) {
 } else {
 	console.log("One Shirley Temple, coming up!");
 } 
+
 // Methods
 // add two numbers
 function add(x, y) {
   return x + y;
 }
+console.log(add(5,3));
+
 // say hello
 function sayHello() {
   console.log("Hello!");
 }
-
-console.log(add(5,3));
 sayHello();
 
 // Loops
@@ -41,3 +46,7 @@ var str = "Loop over me!";
 for (var i = 0; i < str.length; i++) {
 	console.log(str[i]);
 }
+
+
+
+
