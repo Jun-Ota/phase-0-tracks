@@ -8,5 +8,7 @@ create table users(
    "last name" varchar
    );
 
+drop table users;
 
+select * from users;
 
