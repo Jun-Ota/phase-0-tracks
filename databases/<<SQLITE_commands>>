@@ -1,0 +1,12 @@
+<<SQLITE>>
+
+pragma table_info(users);
+
+create table users(
+   id integer primary key,
+   "First name" varchar(255),
+   "last name" varchar
+   );
+
+
+
