@@ -1,0 +1,83 @@
+<<Release 2-1>>
+sqlite> select golfer.name,golfer.age, golfer.won_masters, brands.name from golfer join brands on golfer.club_maker = brands.id;
+Hideki Matsuyama|25|false|Srixon
+Phil Mickelson|46|true|Callaway
+Henrik Stenson|40|false|Callaway
+Adam Scott|36|true|Titleist
+Jason Day|29|false|Taylormade
+Rory Mcllroy|27|false|Callaway
+
+<<Release 2-2>>
+sqlite> update golfer set won_masters = "true" where name = "Hideki Matsuyama";
+sqlite> select * from golfer
+   ...> ;
+1|Hideki Matsuyama|25|true|4
+2|Phil Mickelson|46|true|1
+3|Henrik Stenson|40|false|1
+4|Adam Scott|36|true|3
+5|Jason Day|29|false|2
+6|Rory Mcllroy|27|false|1
+
+<<Release 2-3>>
+sqlite> select * from golfer inner join brands on golfer.club_maker = brands.id;
+1|Hideki Matsuyama|25|true|4|4|Srixon
+2|Phil Mickelson|46|true|1|1|Callaway
+3|Henrik Stenson|40|false|1|1|Callaway
+4|Adam Scott|36|true|3|3|Titleist
+5|Jason Day|29|false|2|2|Taylormade
+6|Rory Mcllroy|27|false|1|1|Callaway
+
+<<Release 2-4>>
+sqlite> select golfer.id, golfer.name, brands.name from golfer inner join brands on golfer.club_maker = brands.id;
+1|Hideki Matsuyama|Srixon
+2|Phil Mickelson|Callaway
+3|Henrik Stenson|Callaway
+5|Jason Day|Taylormade
+6|Rory Mcllroy|Callaway
+
+<<Release 2-5>>
+sqlite> delete from golfer where name = "Adam Scott";
+sqlite> select * from golfer;
+1|Hideki Matsuyama|25|true|4
+2|Phil Mickelson|46|true|1
+3|Henrik Stenson|40|false|1
+5|Jason Day|29|false|2
+6|Rory Mcllroy|27|false|1
+
+
+<<Release 3>>
+Inner join/ Outer join/Cross join/natural 
+■Outer join
+sqlite> select * from golfer left outer join brands on golfer.club_maker = brands.id;
+1|Hideki Matsuyama|25|true|4|4|Srixon
+2|Phil Mickelson|46|true|1|1|Callaway
+3|Henrik Stenson|40|false|1|1|Callaway
+5|Jason Day|29|false|2|2|Taylormade
+6|Rory Mcllroy|27|false|1|1|Callaway
+
+■Cross join
+sqlite> select * from golfer cross join brands;
+1|Hideki Matsuyama|25|true|4|1|Callaway
+1|Hideki Matsuyama|25|true|4|2|Taylormade
+1|Hideki Matsuyama|25|true|4|3|Titleist
+1|Hideki Matsuyama|25|true|4|4|Srixon
+2|Phil Mickelson|46|true|1|1|Callaway
+2|Phil Mickelson|46|true|1|2|Taylormade
+2|Phil Mickelson|46|true|1|3|Titleist
+2|Phil Mickelson|46|true|1|4|Srixon
+3|Henrik Stenson|40|false|1|1|Callaway
+3|Henrik Stenson|40|false|1|2|Taylormade
+3|Henrik Stenson|40|false|1|3|Titleist
+3|Henrik Stenson|40|false|1|4|Srixon
+5|Jason Day|29|false|2|1|Callaway
+5|Jason Day|29|false|2|2|Taylormade
+5|Jason Day|29|false|2|3|Titleist
+5|Jason Day|29|false|2|4|Srixon
+6|Rory Mcllroy|27|false|1|1|Callaway
+6|Rory Mcllroy|27|false|1|2|Taylormade
+6|Rory Mcllroy|27|false|1|3|Titleist
+6|Rory Mcllroy|27|false|1|4|Srixon
+
+
+
+
