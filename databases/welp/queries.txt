@@ -1,0 +1,33 @@
+<Release2-2.>
+sqlite> select * 
+   ...> from reviews
+   ...> join businesses on reviews.business_id = businesses.id 
+   ...> join users on reviews.users_id = users.id 
+   ...> ;
+id|stars|comment|business_id|users_id|id|name|id|First name|last name
+1|5|great food!|1|1|1|Grundy Hollow Wedding Chapel|1|Bradford|Pitt
+3|5|Great for medtitation!|5|4|5|Plumbing by Janet|4|Steven|Wonder
+
+<Release2-3>
+sqlite> select users.[First name], users.[last name], businesses.name, reviews.stars, reviews.comment 
+   ...> from reviews
+   ...> join businesses on reviews.business_id = businesses.id 
+   ...> join users on reviews.users_id = users.id 
+   ...> ;
+First name|last name|name|stars|comment
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|great food!
+Steven|Wonder|Plumbing by Janet|5|Great for medtitation!
+
+<Release2-4>
+sqlite> select businesses.name, users.[First name], users.[last name],reviews.stars, reviews.comment 
+   ...> from reviews
+   ...> join businesses on reviews.business_id = businesses.id 
+   ...> join users on reviews.users_id = users.id 
+   ...> ;
+name|First name|last name|stars|comment
+Grundy Hollow Wedding Chapel|Bradford|Pitt|5|great food!
+Plumbing by Janet|Steven|Wonder|5|Great for medtitation!
+
+
+
+
