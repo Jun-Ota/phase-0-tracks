@@ -24,4 +24,9 @@ post '/students' do
   redirect '/'
 end
 
+get '/main'
+ erb :main
+end
+
+
 # add static resources
